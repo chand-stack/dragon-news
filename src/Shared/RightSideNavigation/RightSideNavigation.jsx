@@ -3,6 +3,10 @@ import { FaGithub } from 'react-icons/fa';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillTwitterCircle,AiFillInstagram } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import qzone1 from '../../assets/qZone1.png'
+import qzone2 from '../../assets/qZone2.png'
+import qzone3 from '../../assets/qZone3.png'
+import bgpng from '../../assets/bg.png'
 
 
 const RightSideNavigation = () => {
@@ -20,20 +24,27 @@ const RightSideNavigation = () => {
             <h2 className="font-bold text-2xl mb-5">Find Us On</h2>
 
             <div>
-                <Link><p className='text-2xl text-gray-500 flex items-center p-4 gap-1 border font-medium'><BsFacebook className='text-blue-500'/>Facebook</p></Link>
-                <Link><p className='text-2xl text-gray-500 flex items-center p-4 gap-1 border font-medium'><AiFillTwitterCircle className='text-blue-500 text-3xl'/>Twitter</p></Link>
-                <Link><p className='text-2xl text-gray-500 flex items-center p-4 gap-1 border font-medium'><AiFillInstagram className='text-pink-500 text-3xl'/>Instagram</p></Link>
+                <Link><p className='rounded-t-md text-2xl text-gray-500 flex items-center p-4 gap-1 border font-medium'><BsFacebook className='text-blue-500'/>Facebook</p></Link>
+                <Link><p className='text-2xl text-gray-500 flex items-center p-4 gap-1 border-x font-medium'><AiFillTwitterCircle className='text-blue-500 text-3xl'/>Twitter</p></Link>
+                <Link><p className='rounded-b-md text-2xl text-gray-500 flex items-center p-4 gap-1 border font-medium'><AiFillInstagram className='text-pink-500 text-3xl'/>Instagram</p></Link>
             </div>
             </div>
 
-            <div className='bg-gray-100'>
+            <div className='bg-gray-100 p-4 mt-5'>
             <h2 className="font-bold text-2xl mb-5">Q-Zone</h2>  
             <div>
-                <img src="" alt="" />
-                <img src="" alt="" />
-                <img src="" alt="" />
+                <img className='mx-auto' src={qzone1} alt="" />
+                <img className='mx-auto' src={qzone2} alt="" />
+                <img className='mx-auto' src={qzone3} alt="" />
             </div>
 
+            </div>
+
+
+            <div className='text-center mt-5 px-10 py-10 space-y-8 text-white' style={{backgroundImage:`url("${bgpng}")`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat',backgroundPosition:'center'}}>
+             <h1 className='text-4xl font-bold '>Create an <br /> Amazing <br /> Newspaper</h1>
+             <p>Discover thousands of options, easy to customize layouts, one-click to import demo and much more.</p>
+             <Link><button className='text-xl btn btn-secondary text-white bg-red-500 rounded-none mt-8 font-semibold'>Learn More</button></Link>
             </div>
             
         </div>

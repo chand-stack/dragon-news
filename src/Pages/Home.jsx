@@ -15,7 +15,7 @@ const Home = () => {
 
 <div className="border-2"><LeftSideNavigation></LeftSideNavigation></div>
 <div className="border-2 lg:col-span-2"><h1 className="text-3xl">news coming soon</h1></div>
-<div className="border-2"><RightSideNavigation></RightSideNavigation></div>
+<div><RightSideNavigation></RightSideNavigation></div>
 
 </div>
 
