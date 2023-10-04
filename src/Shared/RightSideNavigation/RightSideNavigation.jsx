@@ -7,15 +7,29 @@ import qzone1 from '../../assets/qZone1.png'
 import qzone2 from '../../assets/qZone2.png'
 import qzone3 from '../../assets/qZone3.png'
 import bgpng from '../../assets/bg.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const RightSideNavigation = () => {
+
+    const {googleSignIn} = useContext(AuthContext)
+
+    const googleLoginHandler = () => {
+        googleSignIn()
+        .then(result => {
+            console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
     return (
         <div>
             <div>
             <h2 className="font-bold text-2xl">Login With</h2>
             <div className='flex flex-col gap-3 mt-10'>
-            <Link><button className='flex rounded-md text-blue-500 btn-outline items-center btn w-full'><BiLogoGoogle className='text-xl'/>Loogin With Google</button></Link>
+            <button onClick={googleLoginHandler} className='flex rounded-md text-blue-500 btn-outline items-center btn w-full'><BiLogoGoogle className='text-xl'/>Loogin With Google</button>
             <Link><button className='flex rounded-md text-black btn-outline items-center btn w-full'><FaGithub className='text-xl'/>Loogin With Github</button></Link>
             </div>
             </div>

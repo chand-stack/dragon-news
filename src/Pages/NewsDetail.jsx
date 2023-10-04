@@ -14,7 +14,7 @@ const NewsDetail = () => {
         const newNews = newsData?.find(news => news?._id === params?.id)
         setNews(newNews)
     },[newsData,params])
-    console.log(news);
+    
     
 
     return (

@@ -1,16 +1,24 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Header from "../Shared/Header/Header";
 import Latestbtn from "../Shared/Latestbtn/Latestbtn";
 import LeftSideNavigation from "../Shared/LeftSideNavigation/LeftSideNavigation";
 import Navbar from "../Shared/Navbar/Navbar";
 import RightSideNavigation from "../Shared/RightSideNavigation/RightSideNavigation";
 import News from "./News";
+import { useEffect, useState } from "react";
 
 
 const Home = () => {
-    
+    const [news,setNews] = useState([])
 
     const data = useLoaderData()
+
+    const params = useParams()
+    console.log(params.id);
+
+    useEffect(()=>{
+        setNews(data)
+    },[data])
    
 
     return (
@@ -23,11 +31,11 @@ const Home = () => {
 
 <div><LeftSideNavigation></LeftSideNavigation></div>
 <div className="lg:col-span-2 h-screen md:h-[270vh] lg:h-[250vh] overflow-y-scroll scroll-smooth">
-    <h1 className="font-bold text-2xl">Dragon News Home</h1>
+    <h1 className="font-bold text-2xl">Dragon News Home {params.id}</h1>
     
     
 {
-    data.map((news,idx) => <News key={idx} news={news}></News>)
+    news.map((news,idx) => <News key={idx}  news={news}></News>)
 }
 
     </div>

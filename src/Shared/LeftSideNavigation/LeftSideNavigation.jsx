@@ -9,6 +9,7 @@ import moment from 'moment';
 
 const LeftSideNavigation = () => {
     const [newsList,setNewsList] = useState([])
+    
 
     useEffect(()=>{
         fetch('categories.json')
@@ -21,7 +22,7 @@ const LeftSideNavigation = () => {
             <h2 className="font-bold text-2xl">All Caterogy</h2>
             <div className="pl-8 space-y-4 mt-10 text-gray-500">
                  {
-                    newsList.map(category => <NavLink to={`/news/${category.id}`} className="block text-2xl px-2 py-3" key={category.id}>{category.name}</NavLink>)
+                    newsList.map(category => <NavLink className="block text-2xl px-2 py-3" key={category.id}>{category.name}</NavLink>)
                  }
             </div>
             <div className="mt-5 space-y-4">
